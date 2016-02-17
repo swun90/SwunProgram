@@ -1,0 +1,8 @@
+# ignore directory miniconda/
+miniconda/
+Python/Langtangen_src/
+*~
+*py[cod]
+*.[oa]
+# ignore Mac-produced files
+.DS_Store
