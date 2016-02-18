@@ -1,5 +1,6 @@
 # markdown
 ---
+[toc]
 
 try markdown
 
@@ -7,18 +8,20 @@ try markdown
 **bold**  
 ~~delete~~
 
+$a^2+b^2=c^2$
 
 `code`
 
+```cpp
+#include<iostream>
+using namespace std;
 
-	#include<iostream>
-	using namespace std;
-
-	int main()
-	{
-	    cout<<"hello world!"<<endl;
-		return 0;
-	}
+int main()
+{
+    cout<<"hello world!"<<endl;
+	return 0;
+}
+```
 
 
 - **to do list**
