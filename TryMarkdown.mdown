@@ -8,6 +8,7 @@ try markdown
 **bold**  
 ~~delete~~
 
+seems GitHub does NOT have LaTeX features.
 $a^2+b^2=c^2$
 
 `code`
