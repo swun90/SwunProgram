@@ -1,0 +1,37 @@
+# markdown
+---
+
+try markdown
+
+*italic*  
+**bold**  
+~~delete~~
+
+
+`code`
+
+
+	#include<iostream>
+	using namespace std;
+
+	int main()
+	{
+	    cout<<"hello world!"<<endl;
+		return 0;
+	}
+
+
+- **to do list**
+    - [ ] to be finished `- [ ]`
+    - [x] down           `- [x]`
+- to do 2
+- list 3
+    - sublist
+    - sublist2
+
+link [pku](http://www.pku.edu.cn)
+## subtile 2
+
+> quotation texts
+
+tags: learning markdown
