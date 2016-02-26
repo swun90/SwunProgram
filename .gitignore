@@ -6,3 +6,4 @@ Python/Langtangen_src/
 *.[oa]
 # ignore Mac-produced files
 .DS_Store
+BOUT-dev/
