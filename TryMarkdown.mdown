@@ -14,7 +14,7 @@ $a^2+b^2=c^2$
 `code`
 
 ```cpp
-#include<iostream>
+#include <iostream>
 using namespace std;
 
 int main()
@@ -25,8 +25,8 @@ int main()
 ```
 
 
-- **to do list**
-    - [ ] to be finished `- [ ]`
+- to do list
+    - [ ] to be finished `- [ ]` does **NOT** work
     - [x] down           `- [x]`
 - to do 2
 - list 3
