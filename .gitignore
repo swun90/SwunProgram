@@ -7,4 +7,5 @@ Python/Langtangen_src/
 # ignore Mac-produced files
 .DS_Store
 BOUT-dev/
+bout/
 test/
