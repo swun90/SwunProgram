@@ -9,13 +9,13 @@
 % change 'figPrefix' first!
 % see also VideoWriter
 
-figPrefix='02z'; % the several symbol of the figures' name.
+figPrefix='02z_'; % the several symbols of the figures' name.
 fps=12;
 quality=50;
 myVideo=VideoWriter('myVideo','MPEG-4'); 
 % options of second parameters: MPEG-4, Motion JPEG AVI, Motion JPEG 2000
 
-Nfig=length(dir([figPrefix,'_*.png']));
+Nfig=length(dir([figPrefix,'*.png']));
 myVideo.FrameRate=fps;
 myVideo.Quality=quality;
 open(myVideo);
