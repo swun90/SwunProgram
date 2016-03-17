@@ -3,7 +3,7 @@
 %   i.e. the whole video would be N/fps seconds,
 %   in which N is the number of all figures.
 %   'quality' controls the video size, and it verifies from 0 to 100.
-%   An example, fps=12, quality=50, 1000 figures and a mp4 video 
+%   An example, fps=12, quality=50, 999 figures and a mp4 video 
 %   would be 24.8MB.
 %
 % change 'figPrefix' first!
@@ -23,7 +23,7 @@ open(myVideo);
 
 for i=1:Nfig
     disp(i);
-    p=imread(['02z_',sprintf('%4.4d',i),'.png']);
+    p=imread([figPrefix,sprintf('%4.4d',i),'.png']);
     imag=imresize(p,[902,1204]);
     imshow(imag);
     currFrame=getframe;
