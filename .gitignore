@@ -8,4 +8,5 @@ Python/Langtangen_src/
 .DS_Store
 BOUT-dev/
 bout/
+bout_old/
 test/
