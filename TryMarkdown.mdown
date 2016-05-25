@@ -39,3 +39,60 @@ link [pku](http://www.pku.edu.cn)
 > quotation texts
 
 tags: learning markdown
+
+##hellow world backup markdown
+
+# hello-world
+learn how to use GitHub
+
+Start using Git and GitHub.
+Tutorial from GitHub itself.
+
+--- From swunck@gmail
+
+## Markdown
+It looks like this page uses *Markdown*.
+
+Titles are began by pound keys #. e.g. this title is `## Markdown` in editor.  
+**Bold fonts** use a pair of double asterisks \*\*.  
+*Italic fonts* use a pair of asterisk \*.  
+~~deleting texts~~ are surrounded by a pair of tildes `~~`.  
+Insert code inline, use one pair of left quote `, or three in both previous and following lines.
+Or **just indent four spaces**.
+
+    #include<iostream>
+    using namespace std;
+      
+    int main()
+    {
+      cout<<'Hello world!'<<endl;
+      return 0;
+    }
+
+Items use one asterisk(\*) or other symbols like \+ or \-. So
+```
+- Item 1.
+- Item 2.
+```
+whould be like 
+- Item 1.
+- Item 2.
+
+Use `1.` `2.` to get numbered items. The numbers are just signs, which means they can be like `2.` first and `1.` following.
+
+> quotation use a larger than symbol(>). 
+
+To start a new line, just use too spaces.  
+To start a new paragraph, use one blank line.
+
+---
+A separator line can be three or more asterisks `***`, dashs `---`, or underlines `_ _ _`.
+* * * *
+
+**Links**:
+This is an example of link [PKU](http://www.pku.edu.cn/) inline link.  
+This is [1] a reference-style link, using `[1]` and `[1]: https://www.zhihu.com/ "zhihu"` in any other following line.  
+Or try this: [baidu] [] (`[baidu] []`).
+
+[1]: https://www.zhihu.com/ "zhihu"
+[baidu]: https://www.baidu.com/ "baidu"
