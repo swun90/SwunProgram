@@ -1089,7 +1089,7 @@ int physics_init(bool restarting)
   //      dnorm_p0 = Bbar /(Va*Lbar*1.4*1.602e-19*density*n0_height*MU0);
   //    }
   // - - - - - - - - -  - - - - - - - - -
-  // dnorm should be assigned, and the coefficient should be 2.8 other than 1.4
+  // dnorm should be assigned, and the coefficient is 2.8 other than 1.4
     dnorm = dia_fact * Mi / (2.*1.602e-19*Bbar*Tbar);
     if (!constn0)
         dnorm_p0 = Bbar /(Va*Lbar*2.8*1.602e-19*density*n0_height*MU0);
