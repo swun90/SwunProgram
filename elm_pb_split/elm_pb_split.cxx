@@ -5,7 +5,7 @@
  * Can also include the Vpar compressional term
  * Using invert_laplace to try to invert P0 from transport coefficient, still testing - By T. Y. Xia
  
- * For L-H transition cases - By C.K. Sun
+ * Split the 3-field, for L-H transition cases - By C.K. Sun
  *******************************************************************************/
 
 #include "bout.hxx"
