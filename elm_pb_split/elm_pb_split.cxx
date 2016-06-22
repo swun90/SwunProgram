@@ -5,7 +5,7 @@
  * Can also include the Vpar compressional term
  * Using invert_laplace to try to invert P0 from transport coefficient, still testing - By T. Y. Xia
  
- * For L-H transition cases - By C.K. Sun
+ * Split the 3-field, for L-H transition cases - By C.K. Sun
  *******************************************************************************/
 
 #include "bout.hxx"
@@ -716,6 +716,8 @@ int physics_init(bool restarting)
   OPTION(options, transport_only,          false);  // Only calculate the transport equation, work if Hmode_rc2 = true 
   OPTION(options, path,                      "./"); // The path of the original Vexb data
   OPTION(options, timestep,                   0); // The timestep of previous data used as the initial of transport equation
+  // not assigned previously! At least g++ gives false if not set manually
+  OPTION(options, nogradparj,       false);  // evolve grad_par(Jpar) in vorticity equation
 
   // option for ExB Poisson Bracket 
   OPTION(options, bm_exb_flag,         0);
@@ -1088,24 +1090,30 @@ int physics_init(bool restarting)
   //    {
   //      dnorm_p0 = Bbar /(Va*Lbar*1.4*1.602e-19*density*n0_height*MU0);
   //    }
-  // - - - - - - - - - dnorm should be assigned - - - - - - - - -
-    dnorm = dia_fact * Mi / (2.*1.602e-19*Bbar*Tbar);
+  // - - - - - - - - -  - - - - - - - - -
+  // dnorm should be assigned, and the coefficient is 2.8 other than 1.4
+    dnorm = dia_fact * Mi / (2.*ee*Bbar*Tbar);
     if (!constn0)
-        dnorm_p0 = Bbar /(Va*Lbar*1.4*1.602e-19*density*n0_height*MU0);
+        dnorm_p0 = dnorm/1.4;
+        //dnorm_p0 = Bbar /(Va*Lbar*2.8*ee*density*MU0);
 
   delta_i = AA*60.67*5.31e5/sqrt(density/1e6)/(Lbar*100.0);
 
   output.write("Normalisations: Bbar = %e T   Lbar = %e m\n", Bbar, Lbar);
   output.write("                Va = %e m/s   Tbar = %e s\n", Va, Tbar);
   output.write("                Nbar = %e     Tibar = %e   Tebar = %e\n", Nbar, Tibar, Tebar);
-  if (constn0)
-    {
-      output.write("                dnorm = %e\n", dnorm);
-    } 
-  else 
-    {
-      output.write("		dnorm_p0 = %e\n", dnorm_p0);
-    }
+  //if (constn0)
+  //  {
+  //    output.write("                dnorm = %e\n", dnorm);
+  //  } 
+  //else 
+  //  {
+  //    output.write("		dnorm_p0 = %e\n", dnorm_p0);
+  //  }
+  output.write("                dnorm = %e\n", dnorm);
+  if (!constn0)
+    output.write("		dnorm_p0 = %e\n", dnorm_p0);
+  
   output.write("    Resistivity\n");
 
    if (diffusion_par >0.0 || diffusion_perp > 0.0 || Hmode_rc_par )
