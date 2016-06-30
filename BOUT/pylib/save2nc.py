@@ -1,5 +1,5 @@
 # save data into NetCDF file.
-# © 2016 SUN Chuankui <sunck@pku.edu.cn>
+# (c) 2016 SUN Chuankui <sunck@pku.edu.cn>
 from boututils import DataFile
 
 def save2nc(file_name,**var):
