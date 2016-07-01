@@ -42,7 +42,7 @@ set(l1,'interpreter','latex',...
 xlabel('Q');
 % ylim([0,1.5]);
 title(sprintf('Evolution of pp model (b2=%d)',b2));
-print(gcf,'-dpng',sprintf('Evol_pp_model (b2=%d)',b2));
+print(gcf,'-dpng',sprintf('Evol_pp_model-(b2=%d)',b2));
 pause(0.5)
 close
 end
