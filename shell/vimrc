@@ -1,0 +1,74 @@
+set nocompatible
+source $VIMRUNTIME/vimrc_example.vim
+"source $VIMRUNTIME/mswin.vim
+behave mswin
+
+set ruler
+syntax on
+set mouse=a
+set hlsearch
+set noignorecase
+set ignorecase smartcase
+set go=
+
+set tabstop=2
+set softtabstop=2
+
+set shiftwidth=2
+set ambiwidth=double
+set autoindent
+set smartindent
+set cindent
+
+" Chinese
+"set encoding=utf-8
+"set fileencoding=utf-8,chinese,latin-1
+"if has("win32")
+"	set fileencoding=chinese
+"else
+"	set fileencoding=utf-8
+"endif
+
+source $VIMRUNTIME/delmenu.vim
+source $VIMRUNTIME/menu.vim
+
+ca tn tabnew
+
+set showmatch
+set backspace=indent, eol
+set backspace=2
+set whichwrap+=<,>,h,l
+set whichwrap=b,s,<,>,[,],h,l
+
+set diffopt=context:3
+set lbr
+
+inoremap ( ()<ESC>i
+inoremap ) <c-r>=ClosePair(')')<CR>
+inoremap [ []<ESC>i
+inoremap ] <c-r>=ClosePair(']')<CR>
+inoremap { {<CR>}<ESC>O 
+inoremap } <c-r>=ClosePair('}')<CR> 
+inoremap < <><ESC>i
+inoremap > <c-r>=ClosePair('>')<CR>
+function! ClosePair(char)
+    if getline('.')[col('.') - 1] == a:char
+        return "\<Right>"
+    else
+        return a:char
+    endif
+endfunction
+
+set diffopt+=iwhite
+set diffexpr=DiffW()
+function DiffW()
+	let opt = ""
+	if &diffopt =~ "icase"
+		let opt = opt . "-i "
+	endif
+	if &diffopt =~ "iwhite"
+		let opt = opt . "-w " " vim uses -b by default
+	endif
+	silent execute "!diff -a --binary " . opt .
+				\ v:fname_in . " " . v:fname_new .  " > " . v:fname_out
+endfunction
