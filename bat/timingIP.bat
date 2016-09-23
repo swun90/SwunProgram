@@ -43,7 +43,7 @@ if '%t:~-3,1%'==':' (
 echo linking global/charged IP...
 echo And, do NOT close this window before switched!
 python pkuipgw.py -ac --account=pkuipgwrc --time %time%
-goto end
+goto close
 :disconnect
 echo disconnecting...
 python pkuipgw.py -d --account=pkuipgwrc
@@ -59,7 +59,8 @@ goto end
 :no
 :end
 echo Goodbye, work hard and have a nice day!
+timeout 5
 
-pause
 :endD
 rem echo Goodbye, work hard and have a nice day!
+:close
