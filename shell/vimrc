@@ -73,6 +73,16 @@ function DiffW()
 				\ v:fname_in . " " . v:fname_new .  " > " . v:fname_out
 endfunction
 
+" add head info automatically
+" python .py file into add header
+function HeaderPython()
+    call setline(1, "#!/usr/bin/env python")
+    call append(1, "# -*- coding: utf-8 -*-")
+    normal G
+    normal o
+endf
+autocmd bufnewfile *.py call HeaderPython()
+
 " Commenting blocks of code.
 autocmd FileType c,cpp,java,scala let b:comment_leader = '// '
 autocmd FileType sh,ruby,python   let b:comment_leader = '# '
